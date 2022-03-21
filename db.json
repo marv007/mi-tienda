@@ -1,0 +1,65 @@
+{
+  "clientes": [
+    {
+      "id": "1",
+      "nombre": "Juan Antonio",
+      "apellidos": "Perez",
+      "correo": "juan@gmail.com",
+      "telefono": "7777777",
+      "nit": "0200-010490-105-7"
+    },
+    {
+      "id": "2",
+      "nombre": "Pedro Ernesto",
+      "apellidos": "Hernandez",
+      "correo": "pedro@gmail.com",
+      "telefono": "76767676",
+      "nit": "0210-010594-145-7"
+    },
+    {
+      "id": "3",
+      "nombre": "Carlos",
+      "apellidos": "Lopez",
+      "correo": "carlos1@gmail.com",
+      "telefono": "25252525",
+      "nit": "0250-045889-107-8"
+    }
+  ],
+  "ordenes": [
+    {
+      "idProducto": "1",
+      "idCliente": "1",
+      "idOrden": "1",
+      "cantidad": "1",
+      "fecha": "18-03-2022"
+    },
+    {
+      "id": "2",
+      "idCliente": "2",
+      "idProducto": "2",
+      "cantidad": "3",
+      "fecha": "2022-03-19"
+    },
+    {
+      "id": "3",
+      "idCliente": "3",
+      "idProducto": "1",
+      "cantidad": "5",
+      "fecha": "2022-03-19"
+    }
+  ],
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "Pollo",
+      "descripcion": "Pollo entero",
+      "precio": "4.75"
+    },
+    {
+      "id": "2",
+      "nombre": "Pescado",
+      "descripcion": "Libra",
+      "precio": "1.5"
+    }
+  ]
+}

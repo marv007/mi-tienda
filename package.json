@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start"
+    "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start",
+    "server": "json-server --watch db.json"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +37,7 @@
     "font-awesome": "4.7.0",
     "hammerjs": "2.0.8",
     "jquery": "3.5.1",
+    "json-server": "^0.17.0",
     "jw-bootstrap-switch-ng2": "2.0.5",
     "ng2-charts": "2.4.2",
     "ngx-toastr": "13.2.0",
