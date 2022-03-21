@@ -1,0 +1,78 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Agregar Producto</h5>
+          <p class="category">Por favor llene todos los campos del formulario</p>
+        </div>
+        <div class="card-body">
+          <form class="container" [formGroup]="productoForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-md-4 ">
+                <div class="form-group">
+                  <label>ID</label>
+                  <input type="text" name="id" formControlName="id" class="form-control" placeholder="ID" value="">
+                  <div *ngIf="productoForm.controls['id'].invalid && (productoForm.controls['id'].dirty || productoForm.controls['id'].touched)">
+                    <div class="alert alert-danger" role="alert" *ngIf="productoForm.controls['id'].errors.required">
+                      El ID es requerido.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Nombre</label>
+                  <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre" value="">
+                  <div *ngIf="productoForm.controls['nombre'].invalid && (productoForm.controls['nombre'].dirty || productoForm.controls['nombre'].touched)"
+                  >
+                    <div class="alert alert-danger" role="alert" *ngIf="productoForm.controls['nombre'].errors.required">
+                      El nombre es requerido.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Descripcion</label>
+                  <input type="text" class="form-control" formControlName="descripcion" placeholder="descripcion" value="">
+                  <div *ngIf="productoForm.controls['descripcion'].invalid && (productoForm.controls['descripcion'].dirty || productoForm.controls['descripcion'].touched)">
+                    <div class="alert alert-danger" role="alert" *ngIf="productoForm.controls['descripcion'].errors.required">
+                      La descripcion es requerida.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Precio</label>
+                  <input type="text" class="form-control" formControlName="precio" placeholder="precio" value="0.00">
+                  <div *ngIf="productoForm.controls['precio'].invalid && (productoForm.controls['precio'].dirty || productoForm.controls['precio'].touched)">
+                    <div class="alert alert-danger" role="alert" *ngIf="productoForm.controls['precio'].errors.required">
+                      El precio es requerido.
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="productoForm.controls['precio'].errors.pattern">
+                      El precio debe ser un número con dos decimales.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+
+                  <input type="submit" class="btn btn-info" value="Guardar" >
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
