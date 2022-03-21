@@ -1,0 +1,100 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Agregar cliente</h5>
+          <p class="category">Por favor llene todos los campos del formulario</p>
+        </div>
+        <div class="card-body">
+          <form class="container" [formGroup]="clienteForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-md-4 ">
+                <div class="form-group">
+                  <label>ID</label>
+                  <input type="text" name="id" formControlName="id" class="form-control" placeholder="ID" value="">
+                  <div *ngIf="clienteForm.controls['id'].invalid && (clienteForm.controls['id'].dirty || clienteForm.controls['id'].touched)">
+                    <div class="alert alert-danger" role="alert" *ngIf="clienteForm.controls['id'].errors.required">
+                      El ID es requerido.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Nombre</label>
+                  <input type="text" class="form-control" formControlName="nombre" placeholder="Nombre" value="">
+                  <div *ngIf="clienteForm.controls['nombre'].invalid && (clienteForm.controls['nombre'].dirty || clienteForm.controls['nombre'].touched)"
+                  >
+                    <div class="alert alert-danger" role="alert" *ngIf="clienteForm.controls['nombre'].errors.required">
+                      El nombre es requerido.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Apellidos</label>
+                  <input type="text" class="form-control" formControlName="apellidos" placeholder="Apellidos" value="">
+                  <div *ngIf="clienteForm.controls['apellidos'].invalid && (clienteForm.controls['apellidos'].dirty || clienteForm.controls['apellidos'].touched)">
+                    <div class="alert alert-danger" role="alert" *ngIf="clienteForm.controls['apellidos'].errors.required">
+                      El apellido es requerido.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label for="email">Correo</label>
+                  <input name="correo" id="email" type="email" formControlName="correo" class="form-control" placeholder="Correo">
+                  <div *ngIf="clienteForm.controls['correo'].invalid && (clienteForm.controls['correo'].dirty || clienteForm.controls['correo'].touched)">
+                    <div class="alert alert-danger" role="alert" *ngIf="clienteForm.controls['correo'].errors.required">
+                      El correo es requerido.
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="clienteForm.controls['correo'].errors.email">
+                      El correo no es válido.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>NIT</label>
+                  <input type="text" class="form-control" formControlName="nit" placeholder="NIT" value="">
+                  <div *ngIf="clienteForm.controls['nit'].invalid && (clienteForm.controls['nit'].dirty || clienteForm.controls['nit'].touched)">
+                    <div class="alert alert-danger" role="alert" *ngIf="clienteForm.controls['nit'].errors.required">
+                      El NIT es requerido.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Telefono</label>
+                  <input type="text" class="form-control" formControlName="telefono" placeholder="Telefono" value="">
+                  <div *ngIf="clienteForm.controls['telefono'].invalid && (clienteForm.controls['telefono'].dirty || clienteForm.controls['telefono'].touched)">
+                    <div class="alert alert-danger" role="alert" *ngIf="clienteForm.controls['telefono'].errors.required">
+                      El telefono es requerido.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+
+                  <input type="submit" class="btn btn-info" value="Guardar" >
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
