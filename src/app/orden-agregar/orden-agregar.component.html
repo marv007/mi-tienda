@@ -1,0 +1,94 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Agregar Orden</h5>
+          <p class="category">Por favor llene todos los campos del formulario</p>
+        </div>
+        <div class="card-body">
+          <form class="container" [formGroup]="ordenForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>ID</label>
+                  <input type="text" name="id" formControlName="id" class="form-control" placeholder="ID" value="">
+                  <div *ngIf="ordenForm.controls['id'].invalid && (ordenForm.controls['id'].dirty || ordenForm.controls['id'].touched)">
+                    <div class="alert alert-danger" role="alert" *ngIf="ordenForm.controls['id'].errors.required">
+                      El ID es requerido.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Cliente</label>
+                  <select  class="form-control" formControlName="idCliente">
+                    <option [value]="cliente.id" *ngFor="let cliente of clientes">{{cliente.nombre}} {{cliente.apellidos}}</option>
+                  </select>
+                  <div *ngIf="ordenForm.controls['idCliente'].invalid && (ordenForm.controls['idCliente'].dirty || ordenForm.controls['idCliente'].touched)"
+                  >
+                    <div class="alert alert-danger" role="alert" *ngIf="ordenForm.controls['idCliente'].errors.required">
+                      El cliente es requerido.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Producto</label>
+                  <select  class="form-control" formControlName="idProducto">
+                    <option [value]="producto.id" *ngFor="let producto of productos">{{producto.nombre}}</option>
+                  </select>
+                  <div *ngIf="ordenForm.controls['idProducto'].invalid && (ordenForm.controls['idProducto'].dirty || ordenForm.controls['idProducto'].touched)">
+                    <div class="alert alert-danger" role="alert" *ngIf="ordenForm.controls['idProducto'].errors.required">
+                      El producto es requerido.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Cantidad</label>
+                  <input type="number" class="form-control" min="1" formControlName="cantidad" placeholder="cantidad" value="">
+                  <div *ngIf="ordenForm.controls['cantidad'].invalid && (ordenForm.controls['cantidad'].dirty || ordenForm.controls['cantidad'].touched)">
+                    <div class="alert alert-danger" role="alert" *ngIf="ordenForm.controls['cantidad'].errors.required">
+                      La cantidad es requerida.
+                    </div>
+                    <div class="alert alert-danger" role="alert" *ngIf="ordenForm.controls['cantidad'].errors.pattern">
+                      La cantidad debe ser un número positivo.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <label>Fecha</label>
+                  <input type="date" class="form-control" data-provide="datepicker" formControlName="fecha" placeholder="cantidad" value="">
+                  <div *ngIf="ordenForm.controls['fecha'].invalid && (ordenForm.controls['fecha'].dirty || ordenForm.controls['fecha'].touched)">
+                    <div class="alert alert-danger" role="alert" *ngIf="ordenForm.controls['fecha'].errors.required">
+                      La fecha es requerida.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+
+                  <input type="submit" class="btn btn-info" value="Guardar" >
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
